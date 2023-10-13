@@ -15,6 +15,6 @@ func (k Kubus) Luas() float64 {
 }
 
 func (k Kubus) Keliling() float64 {
-	// return k.Sisi * 12
-	return k.Sisi * 15
+	return k.Sisi * 12
+	// return k.Sisi * 15
 }

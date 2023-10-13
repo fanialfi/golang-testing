@@ -45,3 +45,21 @@ func TestHitungKeliling(t *testing.T) {
 // disini karena struct yang akan diuji ada pada file kubus.go
 // maka pada saat eksekusi nama file kubus.go dan kubus_test.go harus ditulis sebagai argument
 // argument -v atau verbose digunakan untuk menampilkan semua output log pada saat pengujian
+
+// Benchmark
+
+func BenchmarkHitungLuas(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		kubus.Luas()
+	}
+}
+
+// package testing selain digunakan untuk unit test, juga berisikan tools untuk benchmarking
+// cara pembuatannya dengan membuat function yang namanya diawali dengan Benchmark dan parameter-nya bertipe *testing.B
+// untuk menjalankan Benchmark jalankan test dengan menambahkan	argument -bench=. / -bench namaBenchmark
+// argument ini digunakan untuk menandai bahwa selain testing ada juga Benchmark yang perlu di uji
+//
+// hasil dari benchmarking akan terlihat seperti berikut ini
+// BenchmarkHitungLuas-4           15654964                76.67 ns/op
+// arti dari 15654964 adalah function di atas di tes sebanyak 15654964
+// dan 76.67 ns/op berarti setiap satu kali run function membutuhkan waktu eata rata 76.67 nano detik
