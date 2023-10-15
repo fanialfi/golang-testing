@@ -20,3 +20,14 @@ table berikut berisikan method standar testing yang bisa digunakan di go
 |`SkipNow()`|menghentikan proses testing fungsi, dilanjutkan ke testing berikutnya|
 |`Skiped()`|menampilkan laporan skip|
 |`Parallel()`|meng-set bahwa eksekusi testing adalah parallel|
+
+didalam package testify terdapat 5 package dengan kegunaan berbeda beda satu dengan yang lainnya.
+Detailnya bisa dilihat pada table berikut ini.
+
+|package|kegunaan|
+|-------|--------|
+|`assert`|berisikan tools standar untuk melakukan testing|
+|`http`|berisikan tools untuk keperluan testing http|
+|`mock`|berisikan tools untuk mocking object|
+|`require`| sama seperti `assert` hanya saja jika terjadi fail pada saat test akan menghentikan eksekusi program|
+|`suite`|berisikan tools testing yang berhubungan dengan struct dan method|

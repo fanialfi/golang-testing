@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 var (
 	kubus              Kubus   = Kubus{4}
@@ -34,6 +38,21 @@ func TestHitungKeliling(t *testing.T) {
 	if kubus.Keliling() != kelilingSeharusnya {
 		t.Errorf("SALAH! harusnya %.2f", kelilingSeharusnya)
 	}
+}
+
+// testing mengunakan package testify
+func TestHitungVolumeV2(t *testing.T) {
+	// assert.Equal digunakan untuk uji perbandingan, parameter kedua dibandingkan nilainya dengan parameter ketiga
+	// jika tidak maka pesan pada parameter ke 4 akan muncul
+	assert.Equal(t, kubus.Volume(), volumeSeharusnya, "perhitungan volume salah")
+}
+
+func TestHitungLuasV2(t *testing.T) {
+	assert.Equal(t, kubus.Luas(), luasSeharusnya, "perhitungan luas salah")
+}
+
+func TestHitungKelilingV2(t *testing.T) {
+	assert.Equal(t, kubus.Keliling(), kelilingSeharusnya, "perhitungan keliling salah")
 }
 
 // file untuk keperluan testing harus dipisah dengan file utama,
