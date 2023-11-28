@@ -9,19 +9,35 @@ untuk menjalankan file unit test bisa menggunakan perintah `go test -v` perintah
 
 untuk menjalankan spesifik function apa yang ingin dijalankan bisa dengan menggunakan perintah `go test -v -run ^TestNamaFunction$`
 
-table berikut berisikan method standar testing yang bisa digunakan di go
+untuk menggagalkan unit test terdapat function `Fail()` dan `FailNow()`,
+`Fail()` akan menggagalkan test, namun tetap melanjutkan eksekusi unit test, namun di akhir akan dianggap gagal,
+`FailNow()` akan menggagalkan test saat ini juga dan tidak akan melanjutkan eksekusi test.
 
-|method|kegunaan|
-|------|--------|
-|`Log()`|menampilkan log|
-|`Logf()`|menampilkan log dengan format|
+|method|keterangan|
+|------|----------|
 |`Fail()`|menandakan terjadi `Fail()` dan proses testing fungsi akan tetap diteruskan|
 |`FailNow()`|menandakan terjadi `Fail()` dan proses testing fungsi dihentikan|
-|`Failed()`|menampilkan laporan failed|
+
+
+ketika menggunakan `Fail()` dan `FailNow()` kita tidak tahu penyebab gagalnya test, supaya kita tahu penyebab gagalnya test kita bisa menggunakan `Error()` atau `Errorf()` dan `Fatal()` atau `Fatalf()`,
+
+`Error()` dan `Errorf()` seperti melakukan log error lalu memanggil `Fail()` namun dengan `Errorf()` kita bisa melakukan format untuk pesan log nya.
+`Fatal()` atau `Fatalf()` seperti melakukan log error lalu memanggil `FailNow()` namun dengan `Fatalf()` kita bisa melakukan format untuk pesan log nya.
+
+|method|keterangan|
+|------|----------|
+|`Log()`|menampilkan log|
+|`Logf()`|menampilkan log dengan format|
 |`Error()`|`Log()` dengan diikuti `Fail()`|
 |`Errorf()`|`Logf()` dengan diikuti `Fail()`|
 |`Fatal()`|`Log()` dengan diikuti `FailNow()`|
 |`Fatalf()`|`Logf()` dengan diikuti `FailNow()`|
+
+table berikut berisikan method standar testing yang bisa digunakan di go
+
+|method|kegunaan|
+|------|--------|
+|`Failed()`|menampilkan laporan failed|
 |`Skip()`|`Log()` dengan diikuti `SkipNow()`|
 |`Skipf()`|`Logf()` dengan diikuti `SkipNow()`|
 |`SkipNow()`|menghentikan proses testing fungsi, dilanjutkan ke testing berikutnya|
