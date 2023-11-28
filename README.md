@@ -2,6 +2,13 @@
 
 go menyediakan package `testing` berisikan banyak tool untuk keperluan unti test.
 
+untuk membuat unit test file akhirannya harus berupa `_test.go`, 
+selain itu aturan pembuatan function unit test nama function harus di awali dengan nama **Test** selain itu juga harus memiliki parameter `t *testing.T` dan tidak mengembalikan value.
+
+untuk menjalankan file unit test bisa menggunakan perintah `go test -v` perintah tersebut akan menjalankan semua function testing yang ada di current directory.
+
+untuk menjalankan spesifik function apa yang ingin dijalankan bisa dengan menggunakan perintah `go test -v -run ^TestNamaFunction$`
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|
