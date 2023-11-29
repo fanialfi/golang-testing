@@ -10,6 +10,14 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func TestMain(m *testing.M) {
+	// before
+	log.Println("BEFORE UNIT TEST")
+	m.Run()
+	// after
+	log.Println("AFTER UNIT TEST")
+}
+
 func TestSkip(t *testing.T) {
 	if runtime.GOOS == "windows" {
 		t.Skip("tidak bisa menjalankan test di windows")
@@ -22,21 +30,21 @@ func TestSkip(t *testing.T) {
 }
 
 func TestHelloWorldRequire(t *testing.T) {
-	expected := "Hello fani "
+	expected := "Hello fani"
 	result := HelloWorld("fani")
 	require.Equal(t, expected, result, "result must be \"", expected, "\"")
 	log.Println("TestHelloWorld with require done")
 }
 
 func TestHelloWorldAssert(t *testing.T) {
-	expected := "Hello fani "
+	expected := "Hello fani"
 	result := HelloWorld("fani")
 	assert.Equal(t, expected, result, "result must be \"", expected, "\"")
 	log.Println("TestHelloWorld with assert done")
 }
 
 func TestHelloWorld(t *testing.T) {
-	respect := "Hello fani "
+	respect := "Hello fani"
 	result := HelloWorld("fani")
 
 	if result != respect {
@@ -51,7 +59,7 @@ func TestHelloWorld(t *testing.T) {
 }
 
 func TestHelloWorldKedua(t *testing.T) {
-	respect := "Hello fani "
+	respect := "Hello fani"
 	result := HelloWorld("fani")
 
 	if result != respect {

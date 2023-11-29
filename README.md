@@ -54,6 +54,13 @@ untuk menskip test (bukan menggagalkan) kita bisa menggunakan function `Skip()`
 |`Skipf()`|`Logf()` dengan diikuti `SkipNow()`|
 |`SkipNow()`|menghentikan proses testing fungsi, dilanjutkan ke testing berikutnya|
 
+kadang dalam unit test kita ingin melakukan sesuatu sebelum dan sesudah unit test berjalan, 
+di golang terdapat fitur testing.M bernama main, digunakan untuk mengatur eksekusi unit test, 
+namun hal ini juga bisa digunakan untuk melakukan before dan after.
+
+untuk menggunakan testing.M kita harus membuat function TestMain dengan parameter testing.M, 
+namun function FuncMain itu di eksekusi per package bukan per function.
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|
