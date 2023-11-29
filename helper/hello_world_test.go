@@ -2,8 +2,26 @@ package helper
 
 import (
 	"fmt"
+	"log"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
+
+func TestHelloWorldRequire(t *testing.T) {
+	expected := "Hello fani "
+	result := HelloWorld("fani")
+	require.Equal(t, expected, result, "result must be \"", expected, "\"")
+	log.Println("TestHelloWorld with require done")
+}
+
+func TestHelloWorldAssert(t *testing.T) {
+	expected := "Hello fani "
+	result := HelloWorld("fani")
+	assert.Equal(t, expected, result, "result must be \"", expected, "\"")
+	log.Println("TestHelloWorld with assert done")
+}
 
 func TestHelloWorld(t *testing.T) {
 	respect := "Hello fani "

@@ -33,6 +33,19 @@ ketika menggunakan `Fail()` dan `FailNow()` kita tidak tahu penyebab gagalnya te
 |`Fatal()`|`Log()` dengan diikuti `FailNow()`|
 |`Fatalf()`|`Logf()` dengan diikuti `FailNow()`|
 
+melakukan pengecekan di unit test sangat disarankan menggunakan assertion, 
+golang tidak menyediakan package untuk melakukan assertion, 
+sehingga perlu menggunakan package pihak ketiga untuk melakukanya, dan salah satunya adalah `testify`
+
+`testify` mempunyai 2 package untuk melakuka assertion, yaitu `assert` dan `require`, 
+jika menggunakan `assert` jika test gagal maka akan memanggil `Fail()`,
+jika menggunakan `require` jika test gagal maka akan memanggil `FailNow()`
+
+|package|kegunaan|
+|-------|--------|
+|`assert`|berisikan tools standar untuk melakukan testing|
+|`require`| sama seperti `assert` hanya saja jika terjadi fail pada saat test akan menghentikan eksekusi program|
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|
@@ -49,8 +62,6 @@ Detailnya bisa dilihat pada table berikut ini.
 
 |package|kegunaan|
 |-------|--------|
-|`assert`|berisikan tools standar untuk melakukan testing|
 |`http`|berisikan tools untuk keperluan testing http|
 |`mock`|berisikan tools untuk mocking object|
-|`require`| sama seperti `assert` hanya saja jika terjadi fail pada saat test akan menghentikan eksekusi program|
 |`suite`|berisikan tools testing yang berhubungan dengan struct dan method|
