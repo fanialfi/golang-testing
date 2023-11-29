@@ -46,14 +46,19 @@ jika menggunakan `require` jika test gagal maka akan memanggil `FailNow()`
 |`assert`|berisikan tools standar untuk melakukan testing|
 |`require`| sama seperti `assert` hanya saja jika terjadi fail pada saat test akan menghentikan eksekusi program|
 
+untuk menskip test (bukan menggagalkan) kita bisa menggunakan function `Skip()`
+
+|package|kegunaan|
+|-------|--------|
+|`Skip()`|`Log()` dengan diikuti `SkipNow()`|
+|`Skipf()`|`Logf()` dengan diikuti `SkipNow()`|
+|`SkipNow()`|menghentikan proses testing fungsi, dilanjutkan ke testing berikutnya|
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|
 |------|--------|
 |`Failed()`|menampilkan laporan failed|
-|`Skip()`|`Log()` dengan diikuti `SkipNow()`|
-|`Skipf()`|`Logf()` dengan diikuti `SkipNow()`|
-|`SkipNow()`|menghentikan proses testing fungsi, dilanjutkan ke testing berikutnya|
 |`Skiped()`|menampilkan laporan skip|
 |`Parallel()`|meng-set bahwa eksekusi testing adalah parallel|
 
