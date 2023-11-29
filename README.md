@@ -61,6 +61,11 @@ namun hal ini juga bisa digunakan untuk melakukan before dan after.
 untuk menggunakan testing.M kita harus membuat function TestMain dengan parameter testing.M, 
 namun function FuncMain itu di eksekusi per package bukan per function.
 
+di golang mendukung sub test (function unit test didalam function unit test),
+untuk membuat sub test, kita tinggal panggil method `Run()`,
+lalu untuk menjalankan nya seperti menjalankan function unit test pada umumnya, 
+namun jika yang ingin dijalankan adalah sub test nya, maka dengan menambahkan `/NamaSubTest`
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|

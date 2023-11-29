@@ -10,6 +10,20 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func TestSubTest(t *testing.T) {
+	t.Run("SubTestOne", func(t *testing.T) {
+		expected := "Hello fanialfi"
+		result := HelloWorld("fanialfi")
+		require.Equalf(t, expected, result, "hasil yang di harapkan adalah \"%s\"", expected)
+	})
+
+	t.Run("SubTestTwo", func(t *testing.T) {
+		expected := "Hello fanialfi"
+		result := HelloWorld("fanialfi")
+		require.Equalf(t, expected, result, "hasil yang di harapkan adalah \"%s\"", expected)
+	})
+}
+
 func TestMain(m *testing.M) {
 	// before
 	log.Println("BEFORE UNIT TEST")
