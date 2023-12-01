@@ -66,6 +66,13 @@ untuk membuat sub test, kita tinggal panggil method `Run()`,
 lalu untuk menjalankan nya seperti menjalankan function unit test pada umumnya, 
 namun jika yang ingin dijalankan adalah sub test nya, maka dengan menambahkan `/NamaSubTest`
 
+selain testing golang juga mendukung benchmark untuk menghitung performa code kita,
+aturan dalam pembuatan benchmark sama dengan aturan dalam pembuatan unit test di golang,
+hanya saja nama function diawali dengan nama `Benchmark` dan harus memiliki parameter `b *testing.B`.
+
+untuk menjalankan benchmark tanpa menjalankan testing dengan menggunakan perintah berikut 
+`go test -v -run TestNotFound -bench=.` perintah tersebut akan menjalankan semua benchmark yang ada di current directory tanpa menjalankan testing.
+
 table berikut berisikan method standar testing yang bisa digunakan di go
 
 |method|kegunaan|
